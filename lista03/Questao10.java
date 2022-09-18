@@ -27,6 +27,9 @@ public class Questao10 {
 		int cont = 0;
 		
 		for(int i = 0, indice = 0; i < (array.length - 1); i++) {
+			if(i==0) {
+				cont++;
+			}
 			if(array[i] == array[i + 1]) {
 				cont++;
 			}
@@ -35,12 +38,24 @@ public class Questao10 {
 				cont = 1;
 				indice++;
 			}
+
 		}
 		
 		System.out.println("vetor compactado: ");
 		
-		for(int i = 0 ; i < tam; i++) {
-				System.out.println(arrayAux[i]);
+		for(int i = 0, indice = 0 ; i < array.length - 1; i++) {
+			if(array[i]!= array[i+1] && array[i] == 0) {
+				System.out.print("0");
+				System.out.print(arrayAux[indice]);
+				indice++;
+				System.out.print(" ");
+			}
+			else if(array[i]!= array[i+1] && array[i] == 1) {
+				System.out.print("1");
+				System.out.print(arrayAux[indice]);
+				indice++;
+				System.out.print(" ");
+			}
 		}
 	}
 
